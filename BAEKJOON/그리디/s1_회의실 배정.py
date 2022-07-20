@@ -18,5 +18,3 @@ for i in range(n):
         if time[i][1] == time[j:][0]:
             count += 1
         
-
-    
