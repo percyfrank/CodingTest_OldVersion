@@ -1,20 +1,35 @@
+'''
+
+* 회의 시작시간, 끝나는 시간 입력받기 
+ 
+* 입력받은 회의를 1. 끝나는 시간 2. 시작 시간 순으로 정렬
+
+'''
+
+
+
 import sys
 input = sys.stdin.readline
 
 n = int(input())
-time = []
+meeting = []
 
 for _ in range(n):
-    start, end = map(int,input().split())
-    time.append([start,end])
+    start,end = map(int,input().split())
+    meeting.append([start, end])
     
-time.sort()
+meeting = sorted(meeting, key=lambda a: (a[1],a[0])) 
+
+count = 0
+time = 0
+
+for i,j in meeting:
+    if i >= time:
+        count += 1
+        time = j        
+
+print(count)
+         
 
 
-count = 1
-idx = 0
-for i in range(n):
-    for j in range(i+1,n):
-        if time[i][1] == time[j:][0]:
-            count += 1
         
