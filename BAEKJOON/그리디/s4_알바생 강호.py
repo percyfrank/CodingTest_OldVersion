@@ -16,11 +16,12 @@ for i in range(n):
 
 m.sort(reverse=True)
 
+# 주려했던 돈 - (받은 등수 - 1)
 tip = 0
 for i in range(n):
-    if m[i] - i < 0:
+    if m[i] - (i+1 - 1) < 0:    # 팁이 음수라면 주지 않음
         pass
     else:
-        tip += m[i] - i
+        tip += m[i] - (i+1 - 1)
     
 print(tip)
