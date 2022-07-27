@@ -8,11 +8,11 @@ count = 0
 
 def dfs(x,y):
     
-    global count
-    
     if x < 0  or x >= n or y < 0 or y >= n:
         return False
+    
     if  graphs[x][y] == 1:
+        global count
         count += 1
         graphs[x][y] = 2 
         dfs(x-1,y)
@@ -31,7 +31,7 @@ for i in range(n):
         if dfs(i,j) == True:
             array.append(count)
             result += 1
-        count = 0
+            count = 0
 
 print(result)
 array.sort()
