@@ -4,6 +4,8 @@ graphs = [[0]*n for _ in range(n)]
 for i in range(n):
     graphs[i] = list(map(int,input()))
     
+dx = [-1,1,0,0]
+dy = [0,0,-1,1]
 count = 0
 
 def dfs(x,y):
@@ -14,11 +16,11 @@ def dfs(x,y):
     if  graphs[x][y] == 1:
         global count
         count += 1
-        graphs[x][y] = 2 
-        dfs(x-1,y)
-        dfs(x+1,y)
-        dfs(x,y-1)
-        dfs(x,y+1)
+        graphs[x][y] = 0
+        for i in range(4):
+            nx = x + dx[i]
+            ny = y + dy[i]
+            dfs(nx,ny)           
         return True
     
     return False
