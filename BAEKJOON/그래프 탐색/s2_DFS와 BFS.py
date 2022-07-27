@@ -36,6 +36,6 @@ def bfs(graph,start,visited):
                 visited[i] = True
 
 dfs(graph,start,visited)
-print()
-visited = [False] * (n+1) 
+print()          
+visited = [False] * (n+1)     
 bfs(graph,start,visited)
