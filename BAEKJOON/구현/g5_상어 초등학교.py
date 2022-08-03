@@ -32,4 +32,26 @@ for i in range(n**2):
     temp.sort(key = lambda x: (-x[0],-x[1],x[2],x[3]))
     seat[temp[0][2]][temp[0][3]] = student[0]
 
-print(seat)    
+
+students.sort()
+
+
+
+cnt = 0
+ans = 0
+for i in range(n):
+    for j in range(n):
+        m = seat[i][j] 
+        for k in range(4):
+            nr = i + dr[k]
+            nc = j + dc[k]
+            if 0 <= nr < n and 0 <= nc < n:
+                if seat[nr][nc] in students[m-1][1:]:
+                    cnt += 1
+        if cnt == 0:
+            ans += 0
+        else:
+            ans += 10**(cnt-1)
+        cnt = 0 
+
+print(ans)
