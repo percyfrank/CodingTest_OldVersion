@@ -13,7 +13,11 @@ queue = deque()
 dx = [1,-1,0,0]
 dy = [0,0,1,-1]
 
+ans = 0
+
 def bfs():
+    
+    global ans
     for i in range(n):
         for j in range(m):
             if virus[i][j] == 2:
@@ -28,7 +32,12 @@ def bfs():
                 if virus[nx][ny] == 0:
                     virus[nx][ny] = 2
                     queue.append((nx,ny))
-            
+    
+    cnt = 0                
+    for viruss in virus:
+        cnt += virus.count(0)
+    max(ans,cnt)
+
 
 cnt = 0
 for i in range():
