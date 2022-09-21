@@ -4,11 +4,11 @@
 
 ### 성능 요약
 
-메모리: 217736 KB, 시간: 3900 ms
+메모리: 217808 KB, 시간: 3292 ms
 
 ### 분류
 
-너비 우선 탐색(bfs), 브루트포스 알고리즘(bruteforcing), 그래프 이론(graphs), 그래프 탐색(graph_traversal), 구현(implementation)
+너비 우선 탐색(bfs), 브루트포스 알고리즘(bruteforcing), 그래프 이론(graphs), 그래프 탐색(graph_traversal)
 
 ### 문제 설명
 
