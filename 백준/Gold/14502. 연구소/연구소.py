@@ -6,12 +6,11 @@ input = sys.stdin.readline
 
 n,m = map(int,input().split())
 
-virus = [[0]*m for _ in range(n)]
+virus = []
 
-for i in range(n):
-    virus[i] = list(map(int,input().split()))
+for _ in range(n):
+    virus.append(list(map(int,input().split())))
     
-queue = deque()
 
 dx = [1,-1,0,0]
 dy = [0,0,1,-1]
@@ -21,6 +20,7 @@ ans = 0
 def bfs():
     global ans
     arr = copy.deepcopy(virus)
+    queue = deque()
     for i in range(n):
         for j in range(m):
             if arr[i][j] == 2:
