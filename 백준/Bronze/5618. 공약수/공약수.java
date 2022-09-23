@@ -1,37 +1,38 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
-
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-
-        int n = Integer.parseInt(bf.readLine());
-        int[] arr = new int[n];
-
-        StringTokenizer st = new StringTokenizer(bf.readLine());
-        for(int i=0; i<n; i++)
-            arr[i] = Integer.parseInt(st.nextToken());
-        Arrays.sort(arr);
-
-        for(int i=1; i<=arr[0]; i++) {
-            int count = 0;
-
-            // 주어진 자연수의 공약수 찾기
-            for(int j=0; j<n; j++) {
-                if(arr[j] % i == 0)
-                    count ++;
-            }
-
-            // 자연수 n개가 모두 i로 나누어떨어질때
-            if(count == n)
-                System.out.println(i);
-        }
-
-        bf.close();
-    }
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		int A = 0;
+		int B = 0;
+		int C = 0;
+		
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		if(n == 2) {
+			A = Integer.parseInt(st.nextToken());
+			B = Integer.parseInt(st.nextToken());
+			//두 수중 작은수까지만 반복하는 반복문
+			for(int i = 1; i <= Math.min(A, B); i++) {
+				if(A % i == 0 && B % i == 0) {
+					System.out.println(i);
+				}
+			}
+		}else {
+			A = Integer.parseInt(st.nextToken());
+			B = Integer.parseInt(st.nextToken());
+			C = Integer.parseInt(st.nextToken());
+			//세 수중 작은수까지만 반복하는 반복문
+			for(int i = 1; i <= Math.min(A, Math.min(B, C)); i++) {
+				if(A % i == 0 && B % i == 0 && C % i == 0) {
+					System.out.println(i);
+				}
+			}
+		}
+	}
 
 }
