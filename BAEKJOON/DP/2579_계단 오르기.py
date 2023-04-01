@@ -1,6 +1,6 @@
 
 n = int(input())
-d = [[0] * 3 for _ in range(301)]
+d = [[0] * 3 for _ in range(n+1)]
 s = [0 for _ in range(n+1)]
 
 for i in range(1,n+1):
