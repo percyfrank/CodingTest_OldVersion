@@ -20,7 +20,11 @@ def solve(arr):
 while(True):
     arr = list(map(int,input().split()))
     arr.sort()
-    if arr[0] == 0 and arr[1] == 0 and arr[2] == 0:
+    cnt = 0
+    for data in arr:
+        if data == 0:
+            cnt += 1
+    if cnt == 3:
         break
     if isTrianlge(arr):
         print("Invalid")
